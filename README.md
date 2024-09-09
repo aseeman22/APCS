@@ -6,8 +6,8 @@ I have two dogs.
 
 ## list
 
-I love:
+I wear:
 
 -shirts
 -pants
--hats
+-shoes
