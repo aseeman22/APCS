@@ -1,4 +1,4 @@
-public class GeometricSequence {
+public class Geometric {
  
    public static void main(String[] args) 
    {
