@@ -1,16 +1,17 @@
 public class diff21 {
   public static int diff21(int n){
         int j = 21 - n;
+        int x = n - 21;
         if(n>21){
-            return(j*-2);
+            return(x*2);
         }
         else
         {
             return(j);
         }
     }
- public static void testdiff21(int n, boolean expected){
-     boolean result = diff21(n);
+ public static void testdiff21(int n, int expected){
+     int result = diff21(n);
 
      System.out.println("n: " + n + " expected: " + expected + " result: " + result);
      
@@ -26,10 +27,10 @@ public class diff21 {
  } 
  public static void main(String[] args) 
    {
-     testdiff21(20, false);
-     testdiff21(16, true, false);
-     testdiff21(1, false, false);
-     testdiff21(8, false, true);
-     testdiff21(24, true, true);
+     testdiff21(20, 1);
+     testdiff21(26, 10);
+     testdiff21(1, 20);
+     testdiff21(10, 11);
+     testdiff21(24, 6);
    }
 }

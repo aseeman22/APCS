@@ -1,27 +1,21 @@
 public class Vampire {
   public static boolean isVampire(float hour, boolean awake){
-      if (awake){
-          if (hour<6 || hour>22){
-              return(true);
-          } else {
-              return(false);
-          } 
-      } else if{
-          if (awake == false){
-              if(hour>=6 && hour<= 22)
+      if (awake==true && hour<6 || hour>22){
+              return true;
+      }
+       else if(awake == false && (hour>=6 && hour<= 22))
               {
-                  return(true);
+                  return true;
               } else {
-                  return(false);
+                  return false;
               }
           }
-      }
-      return(true);
-    }
+      
+  
  public static void testisVampire(float hour, boolean awake, boolean expected){
      boolean result = isVampire(hour, awake);
 
-     System.out.println("hour: " + hour +  " awake: " + awake + " expected: " + expected + " result: " + result +);
+     System.out.println("hour: " + hour +  " awake: " + awake + " expected: " + expected + " result: " + result);
      
      if(result == expected)
      {
