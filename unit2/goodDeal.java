@@ -1,4 +1,4 @@
-public class goodDeal {
+public class GoodDeal {
  
    public static boolean goodDeal(double originalPrice, double salePrice) 
    {
@@ -11,9 +11,9 @@ public class goodDeal {
            return(false);
        }
    }
-}
 
-public static void testgoodDeal(double originalPrice, double salePrice, boolean expected){
+
+public static void testGoodDeal(double originalPrice, double salePrice, boolean expected){
     boolean result = goodDeal(originalPrice, salePrice);
          
         System.out.println("originalPrice: " + originalPrice +  " salePrice: " + salePrice + " expected: " + expected + " result: " + result);
@@ -30,9 +30,10 @@ public static void testgoodDeal(double originalPrice, double salePrice, boolean 
 
 public static void main(String[] args) 
    {
-     testisVampire(25, 15, true);
-     testisVampire(16, 15, false);
-     testisVampire(100, 50, true);
-     testisVampire(78, 78, false);
-     testisVampire(300, 283, false);
+     testGoodDeal(25, 15, true);
+     testGoodDeal(16, 15, false);
+     testGoodDeal(100, 50, true);
+     testGoodDeal(78, 78, false);
+     testGoodDeal(300, 283, false);
    }
+}
