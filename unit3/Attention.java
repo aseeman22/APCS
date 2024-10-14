@@ -1,4 +1,4 @@
-public class Attention{
+ public class Attention{
   public static boolean attention(String attentionString){
       String attentionSubstring;
       attentionSubstring = attentionString.substring(0,9);
