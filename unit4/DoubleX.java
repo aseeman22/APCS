@@ -1,5 +1,5 @@
 public class DoubleX {
-   boolean doubleX(String str) {
+   static boolean doubleX(String str) {
         int index = 0; 
     while(index < str.length() - 1)
     {
@@ -19,11 +19,11 @@ public class DoubleX {
   return false;
 }
      public static void testDoubleX(String str, boolean expected){
-        String result = DoubleX(str);
+        boolean result = doubleX(str);
         
         System.out.println("String: " + str + " expected: " + expected + " result: " + result);
         
-        if(result.equals(expected))
+        if(result == expected)
         {
             System.out.println("YAY!");
         } 
@@ -35,9 +35,9 @@ public class DoubleX {
     
     public static void main(String[] args)
     {
-        teststringTimes("abcdefx", false);
-        teststringTimes("xxdkt", true);
-        teststringTimes("thebnflxxnfjen", true);
-        teststringTimes("thebxditu", false);
+        testDoubleX("abcdefx", false);
+        testDoubleX("xxdkt", true);
+        testDoubleX("thebnflxxnfjen", true);
+        testDoubleX("thebxditu", false);
     }
 }

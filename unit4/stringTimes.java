@@ -1,5 +1,5 @@
-public class stringTimes{
-    public String stringTimes(String str, int n) {
+public class StringTimes{
+    public static String stringTimes(String str, int n) {
         String hi = "";
         for(int i = 1; i<= n; i++)
      {
@@ -24,10 +24,10 @@ public class stringTimes{
     
     public static void main(String[] args)
     {
-        teststringTimes(Annie, 5, "AnnieAnnieAnnieAnnieAnnie");
-        teststringTimes(y, 3, "yyy");
-        teststringTimes(Hi, 4, "HiHiHiHi");
-        teststringTimes(String, 7, "StringStringStringStringStringStringString");
+        teststringTimes("Annie", 5, "AnnieAnnieAnnieAnnieAnnie");
+        teststringTimes("y", 3, "yyy");
+        teststringTimes("Hi", 4, "HiHiHiHi");
+        teststringTimes("String", 7, "StringStringStringStringStringStringString");
     }
-  }
+  
 }
