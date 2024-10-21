@@ -15,7 +15,7 @@ public class Person{
    private int pets;
    public Person(String nameInput, int petsInput)
    {
-       name = nameInput;
+       name = nameInput; 
        pets = petsInput;
    }
     

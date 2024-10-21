@@ -1,0 +1,33 @@
+public class CountOfOccurences{
+    public static int countOfOccurences(String word, String part){
+        
+        for(int i = 0; i<word.length(); i++){
+            word.substring(i, i+part.length());
+        }
+        
+        
+    }
+    
+     public static void testCountOfOccurences(String word, String part, int expected){
+        int result = countOfOccurences(word, part);
+        
+        System.out.println("word: " + word + " part: " + part + " expected: " + expected + " result: " + result);
+        
+        if(result == expected)
+        {
+            System.out.println("YAY!");
+        } 
+        else
+        {
+            System.out.println("BOOHOO!");
+        }
+    }
+    
+    public static void main(String[] args)
+    {
+        testCountOfOccurences("Annieieieieie", "ie", 5);
+        testCountOfOccurences("helelelelloooo", "el", 4);
+        testCountOfOccurences("pilillow", "il", 2);
+        testCountOfOccurences("typiiiiiiiiiiiing", "i", 12);
+    }
+}
