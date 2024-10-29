@@ -1,11 +1,15 @@
 public class CountOfOccurences{
     public static int countOfOccurences(String word, String part){
-        
+        String wordSubstring;
+        int numberOfMatches = 0;
         for(int i = 0; i<word.length(); i++){
-            word.substring(i, i+part.length());
+           wordSubstring = word.substring(i, i+part.length());
+            if(wordSubstring.equals(part))
+            {
+              numberOfMatches = numberOfMatches + 1
+            }
         }
-        
-        
+        return numberOfMatches
     }
     
      public static void testCountOfOccurences(String word, String part, int expected){

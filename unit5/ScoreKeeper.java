@@ -1,6 +1,19 @@
 public class ScoreKeeper{
-    private score = 0;
+    private int score = 0;
+    public ScoreKeeper()
     {
-        public 
+        
+    }
+    public int getScore()
+    {
+        return score;
+    }
+    
+    public void scoreNormal(){
+        score = 100 + score;
+    }
+    
+    public void scoreBonus(){
+        score = 1000 + score;
     }
 }
