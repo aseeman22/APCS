@@ -6,10 +6,10 @@ public class CountOfOccurences{
            wordSubstring = word.substring(i, i+part.length());
             if(wordSubstring.equals(part))
             {
-              numberOfMatches = numberOfMatches + 1
+              numberOfMatches = numberOfMatches + 1;
             }
         }
-        return numberOfMatches
+        return numberOfMatches;
     }
     
      public static void testCountOfOccurences(String word, String part, int expected){

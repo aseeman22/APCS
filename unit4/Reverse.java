@@ -1,9 +1,10 @@
 public class Reverse{
     public static String reverse(String word){
+       String reverseWord = "";
         for(int i = 1; i <= word.length(); i++){
-            word.substring(word.length() - 1, 0);  //word.length
+            reverseWord = reverseWord + word.substring(word.length() - i, word.length() - (i - 1));
         }
-        return word.substring(word.length() - 1, 0);
+        return reverseWord;
     }
     
      public static void testReverse(String word, String expected){
@@ -29,3 +30,5 @@ public class Reverse{
         testReverse("computer", "retupmoc");
     }
 }
+
+
