@@ -7,28 +7,26 @@ public class Rectangle{
        height = heightInput;
    }
      
-    public int getBase()
+    public double getBase()
     {
-       return Base;
+       return base;
     }
     
-    public int getHeight()
+    public double getHeight()
     {
-        return Height;
+        return height;
     }
     
     public double area(){
-        area = base*height;
-            return area;
+       return base*height;
     }
     
-    public double perimiter(){
-        perimeter = base + base + height + height;
-        return perimeter;
+    public double perimeter(){
+      return base + base + height + height;
     }
     
-    public double diagnol(){
-        
+    public double diagonal(){
+       return Math.sqrt((base * base) + (height * height));
     }
     
 }
