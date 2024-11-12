@@ -19,10 +19,23 @@ public class square extends PApplet{
          fill(93, 66, 245);
     }
         
-    public void keyPressed{
-        if (keyCode == "d")
+    public void keyPressed
+    {
+        if(keyCode == "d")
         {
-            
+            x += 2;
+        }
+        else if(keyCode == "a")
+        {
+            x -=2;
+        }
+        else if(keyCode == "w")
+        {
+            y += 2;
+        }
+        else if(keyCode == "s")
+        {
+            y -= 2;
         }
     }
     
