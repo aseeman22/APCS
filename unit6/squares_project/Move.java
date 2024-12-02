@@ -5,7 +5,7 @@ import processing.core.*;
 import java.util.*;   // for ArrayList
 
 
-public class Bounce extends PApplet
+public class Move extends PApplet
 {
     public void settings()
     {
@@ -64,6 +64,6 @@ public class Bounce extends PApplet
 
     public static void main(String[] args)
     {
-        PApplet.main("Bounce");
+        PApplet.main("Move");
     }
 }
