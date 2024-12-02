@@ -1,11 +1,11 @@
 public class TotalZ{
     public static int TotalZ(ArrayList<String> name){
         int TotalNameLength = 0;
-        for(int i = 0; i < name.length; i++)
+        for(int i = 0; i < name.size(); i++)
         {
-            if (name[i].substring(0, 1).equals("z")|| name[i].substring(0,1).equals("Z"))
+            if (name.get(i).substring(0, 1).equals("z")|| name.get(i).substring(0,1).equals("Z"))
             {
-               TotalNameLength += name[i].length(); 
+               TotalNameLength += name.get(i).size(); 
             }
         }
         return TotalNameLength;
@@ -26,12 +26,24 @@ public class TotalZ{
             System.out.println("Ugh!!!");
     }
 
-    public static void main(ArrayList<String> args)
+    public static void main(String[] args)
     {
-        String[] names = {"Annie", "Znfjen", "zkdn"};
-        String[] names2 = {"kenkn","nfjrng","fnjaj"};
-        String[] names3 = {"zngn", "znfjrnj", "znjn"};
-        String[] names4 = {"Zjdn", "Znfn", "nfnmeol"};
+        ArrayList<String> names = new ArrayList<String>();
+        names.add("Annie");
+        names.add("Znfjen");
+        names.add("zkdn");
+        ArrayList<String> names2 = new ArrayList<String>();
+        names2.add("kenkn");
+        names2.add("nfjrng");
+        names2.add("fnjaj");
+        ArrayList<String> names3 = new ArrayList<String>();
+        names3.add("zngn");
+        names3.add("znfjrnj");
+        names3.add("znjn");
+        ArrayList<String> names4 = new ArrayList<String>();
+        names4.add("Zjdn");
+        names4.add("Znfn");
+        names4.add("nfnmeol");
         
         testTotalZ(names, 10);
         testTotalZ(names2, 0);
