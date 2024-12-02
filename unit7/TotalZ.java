@@ -1,18 +1,41 @@
 public class TotalZ{
-    public static String TotalZ(String[] name){
+    public static int TotalZ(String[] name){
         int TotalNameLength = 0;
         for(int i = 0; i < name.length; i++)
         {
-            if (name[0].equals("z")|| name[0].equals("Z"))
+            if (name[i].substring(0, 1).equals("z")|| name[i].substring(0,1).equals("Z"))
             {
-               TotalNameLength = name[0+1]; 
-            }
-            else
-            {
-                TotalNameLength = 0;
+               TotalNameLength += name[i].length(); 
             }
         }
         return TotalNameLength;
     }
+ public static void testTotalZ(String[] name, int expected)
+    {
+        int result = TotalZ(name);
 
+        for (String PotentialZName : name)
+            System.out.println(PotentialZName + " ");
+
+        System.out.println(" expected: " + expected +
+                           " result: " + result + " ");
+
+        if (result == expected)
+            System.out.println("Yippee!!!");
+        else
+            System.out.println("Ugh!!!");
+    }
+
+    public static void main(String[] args)
+    {
+        String[] names = {"Annie", "Znfjen", "zkdn"};
+        String[] names2 = {"kenkn","nfjrng","fnjaj"};
+        String[] names3 = {"zngn", "znfjrnj", "znjn"};
+        String[] names4 = {"Zjdn", "Znfn", "nfnmeol"};
+        
+        testTotalZ(names, 10);
+        testTotalZ(names2, 0);
+        testTotalZ(names3, 15);
+        testTotalZ(names4, 8);
+    }
 }

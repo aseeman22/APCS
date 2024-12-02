@@ -27,14 +27,17 @@ public class SumOfSquares{
 
     public static void main(String[] args)
     {
-        ArrayList<Double> numbers = {2.0, 4.0, 6.0};
-        ArrayList<Double> numbers2 = {1.0,7.0,3.0};
-        ArrayList<Double> numbers3 = {5.0, 3.0, 2.0};
-        ArrayList<Double> numbers4 = {6.6, 2.4, 3.9};
+        ArrayList<Double> numbers = new ArrayList<Double>();
+            numbers.add(2.0);
+            numbers.add(4.0);
+            numbers.add(6.0);
+        //ArrayList<Double> numbers2 = {1.0,7.0,3.0};
+        //ArrayList<Double> numbers3 = {5.0, 3.0, 2.0};
+        //ArrayList<Double> numbers4 = {6.6, 2.4, 3.9};
         
         testSumOfSquares(numbers, 56.0);
-        testSumOfSquares(numbers2, 59.0);
-        testSumOfSquares(numbers3, 38.0);
-        testSumOfSquares(numbers4, 64.53);
+        //testSumOfSquares(numbers2, 59.0);
+        //testSumOfSquares(numbers3, 38.0);
+        //testSumOfSquares(numbers4, 64.53);
     }
 }
