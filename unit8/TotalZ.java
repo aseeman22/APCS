@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class TotalZ{
     public static int TotalZ(ArrayList<String> name){
         int TotalNameLength = 0;
@@ -5,7 +7,7 @@ public class TotalZ{
         {
             if (name.get(i).substring(0, 1).equals("z")|| name.get(i).substring(0,1).equals("Z"))
             {
-               TotalNameLength += name.get(i).size(); 
+               TotalNameLength += name.get(i).length(); 
             }
         }
         return TotalNameLength;
@@ -28,26 +30,26 @@ public class TotalZ{
 
     public static void main(String[] args)
     {
-        ArrayList<String> names = new ArrayList<String>();
-        names.add("Annie");
-        names.add("Znfjen");
-        names.add("zkdn");
-        ArrayList<String> names2 = new ArrayList<String>();
-        names2.add("kenkn");
-        names2.add("nfjrng");
-        names2.add("fnjaj");
-        ArrayList<String> names3 = new ArrayList<String>();
-        names3.add("zngn");
-        names3.add("znfjrnj");
-        names3.add("znjn");
-        ArrayList<String> names4 = new ArrayList<String>();
-        names4.add("Zjdn");
-        names4.add("Znfn");
-        names4.add("nfnmeol");
+        ArrayList<String> name = new ArrayList<String>();
+        name.add("Annie");
+        name.add("Znfjen");
+        name.add("zkdn");
+        ArrayList<String> name2 = new ArrayList<String>();
+        name2.add("kenkn");
+        name2.add("nfjrng");
+        name2.add("fnjaj");
+        ArrayList<String> name3 = new ArrayList<String>();
+        name3.add("zngn");
+        name3.add("znfjrnj");
+        name3.add("znjn");
+        ArrayList<String> name4 = new ArrayList<String>();
+        name4.add("Zjdn");
+        name4.add("Znfn");
+        name4.add("nfnmeol");
         
-        testTotalZ(names, 10);
-        testTotalZ(names2, 0);
-        testTotalZ(names3, 15);
-        testTotalZ(names4, 8);
+        testTotalZ(name, 10);
+        testTotalZ(name2, 0);
+        testTotalZ(name3, 15);
+        testTotalZ(name4, 8);
     }
 }
