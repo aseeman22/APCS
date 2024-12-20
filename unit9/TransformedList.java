@@ -47,7 +47,7 @@ public class TransformedList{
          {
             if(testingReverseAll.get(i).equals(ExpectedWords.get(i)))
             {
-                tester;
+                tester = true;
             }
              else
              {
