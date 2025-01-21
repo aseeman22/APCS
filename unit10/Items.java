@@ -3,8 +3,8 @@ public class Items{
     private float price;
     public Items(String nameInput, float priceInput)
     {
-        name = nameInput;
-        price = priceInput;
+        this.name = nameInput;
+        this.price = priceInput;
     }
     
     public String getName()
