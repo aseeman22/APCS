@@ -4,8 +4,8 @@ public class Person
     private int NumberOfPets;
     public Person(String nameInput, int NumberOfPetsInput)
     {
-        name = nameInput;
-        NumberOfPets = NumberOfPetsInput;
+        this.name = nameInput;
+        this.NumberOfPets = NumberOfPetsInput;
     }
     
     public String getName()
