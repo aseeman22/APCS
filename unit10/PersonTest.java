@@ -1,4 +1,4 @@
 public class PersonTest
 {
-    
+    Person
 }
