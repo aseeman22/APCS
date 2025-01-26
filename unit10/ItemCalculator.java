@@ -1,16 +1,18 @@
+import java.util.*;
+
 public class ItemCalculator
 {
-    public void NamesAndPrices(ArrayList<Items> objects)
+    public static void NamesAndPrices(ArrayList<Items> objects)
     {
-        for(Items curremtItem : objects)
+        for(Items currentItem : objects)
         {
             System.out.println(currentItem.getName());
             System.out.println(currentItem.getPrice());    
         }
     }
-    public double AveragePrice(ArrayList<Items> objects)
+    public static float AveragePrice(ArrayList<Items> objects)
     {
-        double value = 0;
+        float value = 0;
         for(Items currentItem : objects)
         {
             value += currentItem.getPrice();
