@@ -37,6 +37,29 @@ public class ItemsTest
         }
         
         
+        Items Backpack = new Items("backpack", (float)35.0);
+        Items WaterBottle = new Items("WaterBottle", (float)20.0);
+        Items Binder = new Items("Binder", (float)15.0);
+        
+        ArrayList<Items> objects3 = new ArrayList<Items>();
+            objects3.add(Backpack);
+            objects3.add(WaterBottle);
+            objects3.add(Binder);
+                
+        String ExpectedMostExpensive = "backpack";
+        
+        String ActualMostExpensive = ItemCalculator.MostExpensiveItem(objects3);
+        
+        if(ExpectedMostExpensive == ActualMostExpensive)
+        {
+            System.out.println("YAYYY!");
+        }
+        else
+        {
+            System.out.println("BOOO!");
+        }
+        
+        
         
     }
     

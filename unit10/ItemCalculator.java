@@ -20,7 +20,7 @@ public class ItemCalculator
             value = value/objects.size();
             return value;
     }
-    public String MostExpensiveItem(ArrayList<Items> objects)
+    public static String MostExpensiveItem(ArrayList<Items> objects)
     {
         float MaxValue = 0;
         String name = " ";
