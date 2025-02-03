@@ -1,7 +1,8 @@
-public class Vehicle
+public interface Vehicle
 {
-    public Vehicle(String car)
-    {
-        this.car = car;
-    }
+    public String name();
+    public int wheelCount();
+    public boolean isHumanPowered();
 }
+    
+

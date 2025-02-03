@@ -4,9 +4,10 @@ public class PersonTest
 {
     public static void main(String[] args)
     {
-        Person Annie = new Person("Annie", (double)4.0);
-        Person fnsey = new Person("fnsey", (double)3.0);
-        Person nndifn = new Person("nndifn", (double)2.0);
+        Person Annie = new Person("Annie", (int)4.0);
+        Person fnsey = new Person("fnsey", (int)3.0);
+        Person nndifn = new Person("nndifn", (int)2.0);
+        PersonStats calculator = new PersonStats();
         
         ArrayList<Person> people = new ArrayList<Person>();
             people.add(Annie);
@@ -15,7 +16,7 @@ public class PersonTest
         
         
         double ExpectedAverageValue = 3;
-        double ActualAverageValue = PersonStats.AverageNumberOfPets(people);
+        double ActualAverageValue = calculator.AverageNumberOfPets(people);
         
         if(ExpectedAverageValue == ActualAverageValue)
         {
@@ -47,6 +48,15 @@ public class PersonTest
             System.out.println("Noooo");
         }
         
+        ArrayList<String> People = new ArrayList<String>();
+            People.add("Annie");
+            People.add("fneih");
+            People.add("njejij");
+        
+        for(Person name: People)
+        {
+            
+        }
         
         
         
