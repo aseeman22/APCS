@@ -27,9 +27,9 @@ public class PersonTest
             System.out.println("NOOO!");
         }
         
-        Person diofj = new Person("diofj", (double)4.0);
-        Person vnds = new Person("vnds", (double)3.0);
-        Person fjned = new Person("fjned", (double)2.0);
+        Person diofj = new Person("diofj", (int)4);
+        Person vnds = new Person("vnds", (int)3);
+        Person fjned = new Person("fjned", (int)2);
         
          ArrayList<Person> people2 = new ArrayList<Person>();
             people2.add(diofj);
@@ -48,14 +48,21 @@ public class PersonTest
             System.out.println("Noooo");
         }
         
+        Person dfiea = new person("dfiea", (int)4);
+        Person fneih = new person("fneih", (int)2);
+        Person njejij = new person("njejij", (int)1);
+        
         ArrayList<String> People = new ArrayList<String>();
-            People.add("Annie");
-            People.add("fneih");
-            People.add("njejij");
+            //People.add("Annie", 4);
+            //People.add("fneih", 2);
+           // People.add("njejij", 1);
         
         for(Person name: People)
         {
-            
+            if(name.getNumberOfPets()>1)
+            {
+                return People2.add(name); 
+            }
         }
         
         
