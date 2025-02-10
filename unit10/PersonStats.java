@@ -8,15 +8,16 @@ public class PersonStats
     }
     
     
-    public static int AverageNumberOfPets(ArrayList<Person> people)
+    public static float AverageNumberOfPets(ArrayList<Person> people)
     {
-        int value = 0;
+        float value = 0;
+       // value += currentPerson.getNumberOfPets();
         for (Person currentPerson:people)
         {
             value += currentPerson.getNumberOfPets();
-            value = value/people.size();
             
         }
+        value = value/people.size();
         return value;
     }
     public static String PersonWithMostPets(ArrayList<Person> people)
