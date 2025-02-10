@@ -2,10 +2,6 @@ import java.util.*;
 
 public class PersonStats
 {
-    public PersonStats()
-    {
-        
-    }
     
     
     public static float AverageNumberOfPets(ArrayList<Person> people)
