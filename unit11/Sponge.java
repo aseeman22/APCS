@@ -1,7 +1,7 @@
-public class Human extends Animal
+public class Sponge extends Animal
 {
-   String name = " ";
-    int legCount = 2;
+    String name = " ";
+    int legCount = 0;
    public human(String name)
    {
         super(name);

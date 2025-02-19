@@ -1,7 +1,7 @@
-public class Human extends Animal
+public class Cat extends Animal
 {
-   String name = " ";
-    int legCount = 2;
+    String name = " ";
+    int legCount = 4;
    public human(String name)
    {
         super(name);
