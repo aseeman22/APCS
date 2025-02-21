@@ -2,7 +2,7 @@ public class Centipede extends Animal
 {
     String name = " ";
     int legCount = 100;
-   public human(String name)
+    public Centipede(String name)
    {
         super(name);
    }

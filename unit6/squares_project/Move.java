@@ -20,7 +20,7 @@ public class Move extends PApplet
 
     public void draw()
     {
-        background(0);
+        background(255);
         for (Square s : squares)
             s.display();
     }
