@@ -10,14 +10,16 @@ public class Game extends PApplet
 
     public void setup()
     {
-        fill(255);
-        background(255);
+        
+        
     }
 
     public void draw()
     {
-        fill(200,25,25);
-        rect(5,5,300,300);
+       background(255);
+       
+       fill(200,25,25);
+       rect(5,5,300,300);
        
     }
 
