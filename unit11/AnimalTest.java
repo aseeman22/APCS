@@ -6,9 +6,10 @@ public class AnimalTest
         Centipede AnniesCentipede = new Centipede ("Centipede");
     
      ArrayList<Animal> Animals = new ArrayList<Animal>();
-            Cars.add(AnniesMotorcycle);
-            Cars.add(AnniesCar);
-            Cars.add(AnniesTricycle);
+            Animal.add(AnniesHuman);
+            Animal.add(AnniesCat);
+            Animal.add(AnniesSponge);
+            Animal.add(AnniesCentipede);
    
     for(Animal RandomAnimal : Animals)
         {

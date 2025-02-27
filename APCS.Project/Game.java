@@ -50,14 +50,24 @@ public class Game extends PApplet
             }
          
         }
-        
+       
        
        for(int n = 0; n<11; n++)
        {
         for(int i = 0; i<6; i++)
         {
-            rect(n, i + SquareLength, SquareLength, SquareLength);
-            rect(n + SquareLength, i, SquareLength, SquareLength);
+           // rect(n + SquareLength, i + SquareLength, SquareLength, SquareLength);
+           
+           //rect(n + SquareLength, 0, SquareLength, SquareLength);
+           //rect(0, i+SquareLength, SquareLength, SquareLength);
+           
+           //rect(n, i, SquareLength, SquareLength);
+           
+           //rect(50,50,50,50);
+           
+            rect(n-SquareLength, i-SquareLength, SquareLength, SquareLength);
+           
+           
         }
        }
     }
