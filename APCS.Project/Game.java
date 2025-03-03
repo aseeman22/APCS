@@ -3,48 +3,73 @@ import processing.core.*;
 
 public class Game extends PApplet
 {
-   //0=nothing 1=avatar 2=barrier
-   int [][] values = 
-   {
+   int NumberOfRowSquares = 9;
+   int NumberOfColumnSquares = 13;
+  
+  //0=nothing 1=avatar 2=barrier
+   int[][] values = new int[NumberOfRowSquares][NumberOfColumnSquares];
+   
+   
+   /*{
    {0,0,0,0,0,0,0,0,0,0,0},
    {0,0,0,0,0,0,0,0,0,0,0},
    {0,0,0,0,0,0,0,0,0,0,0},
    {0,0,0,0,0,1,0,0,0,0,0},
    {0,0,0,0,0,0,0,0,0,0,0},
    {0,0,0,0,0,0,0,0,0,0,0}
-   };
+   };*/
    
    int SquareLength = 50;
 
    
    public void settings()
     {
-        size(600, 600);
+        size(NumberOfRowSquares*SquareLength, NumberOfColumnSquares*SquareLength);
     }
 
     public void setup()
     {
+     
+     //building 2D array
+     for(int i = 0; i<NumberOfRowSquares; i++)
+    {
+    for(int n = 0; n<NumberOfColumnSquares; n++)
+    {
+      if(i == 4 && n ==7)
+      {
+        values[i][n] = 1;
+      }
+      else
+      {
+        values[i][n] = 0;
+      }
         
+       }
+     }  
     }
 
     public void draw()
     {
         background(255);
-        for(int n = 0; n<6; n++)
+        
+        //filling in colors for squares
+        for(int n = 0; n<NumberOfRowSquares; n++)
         {
-            for(int i = 0; i<11; i++)
+            for(int i = 0; i<NumberOfColumnSquares; i++)
             {
-              if(values[n][i] == 0)
+             
+             rect(n * SquareLength, i * SquareLength, SquareLength, SquareLength);
+             if(values[n][i] == 0)
               {
-                System.out.println("Zero");
+                fill(255, 0, 0);
               }
               else if(values[n][i]==1)
               {
-                System.out.println("one");
+                fill(0, 255, 0);
               }
               else if(values[n][i]==2)
               {
-                System.out.println("two");
+                fill(0, 0, 255);
               }
             
             }
@@ -52,11 +77,12 @@ public class Game extends PApplet
         }
        
        
-       for(int n = 0; n<11; n++)
-       {
-        for(int i = 0; i<6; i++)
-        {
-           // rect(n + SquareLength, i + SquareLength, SquareLength, SquareLength);
+       // drawing the grid
+      // for(int n = 0; n<NumberOfColumnSquares; n++)
+      // {
+       // for(int i = 0; i<NumberOfRowSquares; i++)
+      //  {
+           // rect(i * SquareLength, n * SquareLength, SquareLength, SquareLength);
            
            //rect(n + SquareLength, 0, SquareLength, SquareLength);
            //rect(0, i+SquareLength, SquareLength, SquareLength);
@@ -65,11 +91,11 @@ public class Game extends PApplet
            
            //rect(50,50,50,50);
            
-            rect(n-SquareLength, i-SquareLength, SquareLength, SquareLength);
+            //rect(n + i, n+ i, SquareLength, SquareLength);
            
            
-        }
-       }
+       // }
+      // }
     }
     
 
