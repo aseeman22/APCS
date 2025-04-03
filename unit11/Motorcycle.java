@@ -4,9 +4,11 @@ public class Motorcycle implements Vehicle
     int wheelCount = 2;
     boolean isHumanPowered = true;
     
-    public Motorcycle(String nameInput)
+    public Motorcycle(String nameInput, int wheelCountInput, boolean isHumanPoweredInput)
     {
       this.name = nameInput;  
+      this.wheelCount = wheelCountInput;
+      this.isHumanPowered = isHumanPoweredInput;
     }
     
     public String name()

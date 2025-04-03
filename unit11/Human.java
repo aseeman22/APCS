@@ -2,13 +2,9 @@ public class Human extends Animal
 {
    String name = " ";
     int legCount = 2;
-   public human(String name)
-   {
-        super(name);
+   public Human(String name, int legCount, boolean furriness)
+   { 
+        super(name, legCount, furriness);
    }
     
-   public human(int legCount)
-   {
-        super(legCount);
-   }
 }

@@ -1,10 +1,10 @@
 import java.util.*;
 
 
-public class VehicleStats
+public class VehicleStats 
 {
    
-    public int TotalNumberOfWheels(ArrayList<Vehicle> Vehicles)
+    public static int TotalNumberOfWheels(ArrayList<Vehicle> Vehicles)
     {
         int totalNumberOfWheels = 0; 
         for(Vehicle vehicle : Vehicles)
@@ -14,7 +14,7 @@ public class VehicleStats
         return totalNumberOfWheels;
     }
     
-    public ArrayList<Vehicle> HumanPoweredVehicle(ArrayList<Vehicle> vehicles)
+    public static ArrayList<Vehicle> HumanPoweredVehicle(ArrayList<Vehicle> vehicles)
     {
         ArrayList<Vehicle> humanPoweredVehicles = new ArrayList<Vehicle>();
         for(Vehicle vehicle : vehicles)

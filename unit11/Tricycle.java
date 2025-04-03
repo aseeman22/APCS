@@ -4,9 +4,11 @@ public class Tricycle implements Vehicle
     int wheelCount = 3;
     boolean isHumanPowered = true;
     
-    public Tricycle(String nameInput)
+    public Tricycle(String nameInput, int wheelCountInput, boolean isHumanPoweredInput)
     {
       this.name = nameInput;  
+      this.wheelCount = wheelCountInput;
+      this.isHumanPowered = isHumanPoweredInput;
     }
     
     public String name()

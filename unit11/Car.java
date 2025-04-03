@@ -4,9 +4,11 @@ public class Car implements Vehicle
     int wheelCount = 4;
     boolean isHumanPowered = true;
     
-    public Car(String nameInput)
+    public Car(String nameInput, int wheelCountInput, boolean isHumanPoweredInput)
     {
       this.name = nameInput;  
+      this.wheelCount = wheelCountInput;
+      this.isHumanPowered = isHumanPoweredInput;
     }
     
     public String name()

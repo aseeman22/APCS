@@ -1,21 +1,27 @@
+import java.util.*;
+
 public class AnimalTest
 {
-        Human AnniesHuman = new Human("Human");
-        Cat AnniesCat = new Cat("Cat");
-        Sponge AnniesSponge = new Sponge("Sponge");
-        Centipede AnniesCentipede = new Centipede ("Centipede");
+       public static void main(String[] args)
+       {
+       
+        Human AnniesHuman = new Human("Human", 2, false);
+        Cat AnniesCat = new Cat("Cat", 4, true);
+        Sponge AnniesSponge = new Sponge("Sponge", 0, false);
+        Centipede AnniesCentipede = new Centipede ("Centipede", 100, true);
     
      ArrayList<Animal> Animals = new ArrayList<Animal>();
-            Animal.add(AnniesHuman);
-            Animal.add(AnniesCat);
-            Animal.add(AnniesSponge);
-            Animal.add(AnniesCentipede);
+            Animals.add(AnniesHuman);
+            Animals.add(AnniesCat);
+            Animals.add(AnniesSponge);
+            Animals.add(AnniesCentipede);
    
     for(Animal RandomAnimal : Animals)
         {
-            System.out.println(RandomAnimal.name());
-            System.out.println(RandomAnimal.legCount());
+            System.out.println(RandomAnimal.getName());
+            System.out.println(RandomAnimal.getLegCount());
+            System.out.println(RandomAnimal.getFurriness());
             
         }
-            
+       }
 }
