@@ -3,11 +3,13 @@ import processing.core.*;
 
 public class Game extends PApplet
 {
-   int NumberOfRowSquares = 9;
-   int NumberOfColumnSquares = 13;
+   int NumberOfRowSquares = 13;
+   int NumberOfColumnSquares = 9;
   
   //0=nothing 1=avatar 2=barrier
-   int[][] values = new int[NumberOfRowSquares][NumberOfColumnSquares];
+   int[][] values = new int[NumberOfColumnSquares][NumberOfRowSquares];
+   
+   private Player pig = new Player();
    
    
    /*{
@@ -24,7 +26,7 @@ public class Game extends PApplet
    
    public void settings()
     {
-        size(NumberOfRowSquares*SquareLength, NumberOfColumnSquares*SquareLength);
+        size(NumberOfColumnSquares*SquareLength, NumberOfRowSquares*SquareLength);
     }
 
     public void setup()
@@ -35,17 +37,11 @@ public class Game extends PApplet
     {
     for(int n = 0; n<NumberOfColumnSquares; n++)
     {
-      if(i == 4 && n ==7)
-      {
-        values[i][n] = 1;
-      }
-      else
-      {
-        values[i][n] = 0;
-      }
-        
+     values[n][i] =0;
        }
-     }  
+     } 
+     
+     values[pig.getylocation()][pig.getxlocation()] = 1;
     }
 
     public void draw()
@@ -53,9 +49,9 @@ public class Game extends PApplet
         background(255);
         
         //filling in colors for squares
-        for(int n = 0; n<NumberOfRowSquares; n++)
+        for(int i = 0; i<NumberOfRowSquares; i++)
         {
-            for(int i = 0; i<NumberOfColumnSquares; i++)
+            for(int n = 0; n<NumberOfColumnSquares; n++)
             {
              
              rect(n * SquareLength, i * SquareLength, SquareLength, SquareLength);
