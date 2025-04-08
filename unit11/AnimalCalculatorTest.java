@@ -12,22 +12,19 @@ public class AnimalCalculatorTest
         Centipede AnniesCentipede3 = new Centipede("Centipede", 100, true);
         
         ArrayList<Animal> animals = new ArrayList<Animal>();
+            animals.add(AnniesHuman3);
+            animals.add(AnniesCat3);
+            animals.add(AnniesSponge3);
+            animals.add(AnniesSponge3);
       
-        boolean expected = true;
-        boolean result = AnimalCalculator.FurryOrNotFurry(animals);
-        if(expected == true && result == true)
-        {
-            System.out.println("YAYYY");
-        }
-       else
-       
-       {
-           System.out.println("NOOO");
-       }
+      for()
+        
+        //System.out.println(AnimalCalculator.FurryOrNotFurry()); 
       
-        System.out.println("Furry or not furry");
-        System.out.println("expected: " + expected);
-        System.out.println("result: " + result);
+      //System.out.println("Human: " + AnniesHuman3.FurryOrNotFurry() + "Cat: " + AnniesCat3.FurryOrNotFurry() + "Sponge: " + AnniesSponge3.FurryOrNotFurry() + "Centipede: " + AnniesCentipede3.FurryOrNotFurry());
+            
+      
+
       
       
       //AverageNumberOfLegs Test

@@ -1,6 +1,6 @@
 public class Player{
     private int xlocation = 6;
-    private int ylocation = 3;
+    private int ylocation = 4;
     private int xvelocity =1;
     private int yvelocity = 1;
     public Player()

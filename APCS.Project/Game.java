@@ -41,6 +41,7 @@ public class Game extends PApplet
        }
      } 
      
+     System.out.println(pig.getylocation() + " " + pig.getxlocation());
      values[pig.getylocation()][pig.getxlocation()] = 1;
     }
 
@@ -54,7 +55,7 @@ public class Game extends PApplet
             for(int n = 0; n<NumberOfColumnSquares; n++)
             {
              
-             rect(n * SquareLength, i * SquareLength, SquareLength, SquareLength);
+             
              if(values[n][i] == 0)
               {
                 fill(255, 0, 0);
@@ -67,7 +68,7 @@ public class Game extends PApplet
               {
                 fill(0, 0, 255);
               }
-            
+              rect(n * SquareLength, i * SquareLength, SquareLength, SquareLength);
             }
          
         }
