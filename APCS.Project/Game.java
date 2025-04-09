@@ -96,9 +96,33 @@ public class Game extends PApplet
     }
     
 
-    public void keyPressed()
+    public void mouseClicked()
     {
-                
+        int column = 0;
+        int row = 0;
+        for(int i = 0; i<NumberOfColumnSquares; i++)
+        {
+            if(mouseX> i*SquareLength && mouseX<= (i+1)*SquareLength)
+            {
+              column = i;
+            }
+        }
+        
+        for(int j = 0; j<NumberOfRowSquares; j++)
+        {
+            if(mouseY> j*SquareLength && mouseY<= (j+1)*SquareLength)
+            {
+              row = j;
+            }
+        }
+        
+        
+        /* 1. 0 turns into 2
+           2. adjust players velocity
+           3. player moves --> 0 turns to 1
+           */
+           
+          values[column][row] = 2;
     }
 
    

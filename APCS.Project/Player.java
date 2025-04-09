@@ -26,6 +26,8 @@ public class Player{
     
     public void updateVelocity()
     {
+        
+        // see location (assume player is at (i,j)) --> then check if there is a 2 (i+1, j), (i-1, j), (i, j+1), (i, j-1)
         if(Math.random() > 0.5)
         {
             xvelocity = -1;
