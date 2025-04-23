@@ -10,5 +10,12 @@ public class RectangleObjects
                 perimeter = (i + j)/rectangles.length;
             }
         }
+        
+        return perimeter;
     }
 }
+
+    public Rectangle ObjectWithGreatestArea(Rectangle[][] rectangles)
+    {
+        
+    }

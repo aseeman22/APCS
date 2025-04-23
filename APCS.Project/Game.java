@@ -1,3 +1,14 @@
+/*
+
+ -fix: on the first click, the player jumps four squares
+ -player should moe to the edges of the screen
+ -if player is surrounded by blue, the game is over
+ - player cannot move over the blue
+ -why is player moving only diagonally?
+ -should not be able to click on a blue square twice (the player moves when the blue square is clicked again)
+ -
+ */
+
 import processing.core.*;
 
 
@@ -100,6 +111,8 @@ public class Game extends PApplet
     {
         int column = 0;
         int row = 0;
+        
+        // if the mouse is cicked, mouseX determines what 50pixels on the X axis that was clicked.
         for(int i = 0; i<NumberOfColumnSquares; i++)
         {
             if(mouseX> i*SquareLength && mouseX<= (i+1)*SquareLength)
@@ -108,6 +121,7 @@ public class Game extends PApplet
             }
         }
         
+        //// if the mouse is cicked, mouseY determines what 50pixels on the y axis that was clicked
         for(int j = 0; j<NumberOfRowSquares; j++)
         {
             if(mouseY> j*SquareLength && mouseY<= (j+1)*SquareLength)
@@ -115,14 +129,58 @@ public class Game extends PApplet
               row = j;
             }
         }
+        // 0 turns to 2
+        values[column][row] = 2;
+        
+        //old location of player turns to 0
+        values[pig.getxlocation()][pig.getylocation()] = 0;
+       
+       //SET LOCATION OF PLAYER TURNS TO 0
+       if(values[4][6] == 1)
+        {
+            values[4][6]= 0;
+        }
+       //update the pigs velocity and its location
+        pig.updateVelocity();
+        pig.updateLocation();
+        
+        //when the player moves, 0 turns to 1
+        
+        if(pig.getxlocation() >= 0 && pig.getxlocation() <= NumberOfRowSquares-1 && pig.getylocation()>=0 && pig.getylocation()<=NumberOfColumnSquares - 1)
+        {
+            values[pig.getxlocation()][pig.getylocation()] = 1;
+        }
         
         
-        /* 1. 0 turns into 2
-           2. adjust players velocity
-           3. player moves --> 0 turns to 1
-           */
-           
-          values[column][row] = 2;
+        
+        
+        
+        //victory condition
+       
+       
+       if(pig.getxlocation() == 0 || pig.getxlocation() == NumberOfRowSquares-1)
+        {
+           for(int i = 0; i<NumberOfRowSquares; i++)
+           {
+            for(int n = 0; n<NumberOfColumnSquares; n++)
+            {
+               
+               values[n][i] = 1;
+            }
+          }
+            
+        }
+        if(pig.getylocation() == 0 || pig.getylocation() == NumberOfColumnSquares-1)
+        {
+         for(int i = 0; i<NumberOfRowSquares; i++)
+           {
+            for(int n = 0; n<NumberOfColumnSquares; n++)
+            {
+                values[n][i] = 1;
+            }
+          }
+        }
+         
     }
 
    
