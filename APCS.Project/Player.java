@@ -18,6 +18,17 @@ public class Player{
         return ylocation;
     }
     
+   
+    public int getxvelocity()
+    {
+        return xvelocity;
+    }
+    
+    public int getyvelocity()
+    {
+        return yvelocity;
+    }
+    
     public void updateLocation()
     {
         xlocation+= xvelocity;
@@ -28,23 +39,34 @@ public class Player{
     {
         
         // see location (assume player is at (i,j)) --> then check if there is a 2 (i+1, j), (i-1, j), (i, j+1), (i, j-1)
-        if(Math.random() > 0.5)
+        
+        if(Math.random()< 0.33)
         {
             xvelocity = -1;
         }
+        else if(Math.random()<0.66)
+        {
+           xvelocity = 1;
+        }
         else
         {
-            xvelocity = 1;
+            xvelocity = 0;
         }
         
-        if(Math.random() > 0.5)
+        if(Math.random() < 0.33)
         {
-            yvelocity = -1;
+           yvelocity = -1;
         }
-        else
+        else if(Math.random() < 0.66)
         {
             yvelocity = 1;
         }
+        else
+        {
+            yvelocity = 0;
+        }
+        
+               
         
         
        

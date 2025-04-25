@@ -1,11 +1,11 @@
 /*
 
  -fix: on the first click, the player jumps four squares
- -player should moe to the edges of the screen
+ -player should go to the edges of the screen
  -if player is surrounded by blue, the game is over
  - player cannot move over the blue
  -why is player moving only diagonally?
- -should not be able to click on a blue square twice (the player moves when the blue square is clicked again)
+ - ****should not be able to click on a blue square twice (the player moves when the blue square is clicked again) --> write at top of mouse clicked function --> use mouseX Mousey to find where was clicked --> put all of mouse clicked that you want to happen in if statement --> if false nothing will happen
  -
  */
 
@@ -142,6 +142,18 @@ public class Game extends PApplet
         }
        //update the pigs velocity and its location
         pig.updateVelocity();
+        
+        int proposedxlocation = 0;
+        int proposedylocation = 0;
+        
+        proposedxlocation = pig.getxvelocity() + pig.getxlocation();
+        proposedylocation = pig.getyvelocity() + pig.getylocation();
+        
+        if(values[proposedxlocation][proposedylocation] == 2)
+        {
+            pig.updateVelocity();
+        }
+        
         pig.updateLocation();
         
         //when the player moves, 0 turns to 1
@@ -180,9 +192,35 @@ public class Game extends PApplet
             }
           }
         }
+        
          
+        //victory condition for if player is surrounded by blue
+        
+        if(values[pig.getxlocation() +1][pig.getylocation()] == 2 && values[pig.getxlocation() - 1][pig.getylocation()] == 2 && values[pig.getxlocation()][pig.getylocation() + 1] == 2 && values[pig.getxlocation()][pig.getylocation() - 1] == 2)
+        {
+            for(int i = 0; i< NumberOfRowSquares; i++)
+            {
+                for(int n = 0; n< NumberOfColumnSquares; n++)
+                {
+                    values[n][i] = 2;
+                }
+            }
+        }
+       /* 
+        if(pig.getxlocation() + 1 = 2 && pig.getxlocation() - 1 = 2 && pig.getylocation() + 1 = 2 && pig.getylocation() - 1 = 2)
+    {
+        
     }
+    //making pig not be able to jump over blue
+    if(pig.getxlocation() + 1 = 2 || pig.getxlocation() - 1 = 2 || pig.getylocation() + 1 = 2 || pig.getylocation() - 1 = 2)
+    {
+    
+    }
+         */
 
+    }
+    
+    
    
 
     public static void main(String[] args)
