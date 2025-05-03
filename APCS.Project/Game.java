@@ -1,12 +1,6 @@
 /*
 
- -fix: on the first click, the player jumps four squares
- -player should go to the edges of the screen
- -if player is surrounded by blue, the game is over
- - player cannot move over the blue
- -why is player moving only diagonally?
- - ****should not be able to click on a blue square twice (the player moves when the blue square is clicked again) --> write at top of mouse clicked function --> use mouseX Mousey to find where was clicked --> put all of mouse clicked that you want to happen in if statement --> if false nothing will happen
- -
+ - player cannot move over the blue --> pig can jump through squares that are diagnol to eachother
  */
 
 import processing.core.*;
@@ -14,8 +8,10 @@ import processing.core.*;
 
 public class Game extends PApplet
 {
-   int NumberOfRowSquares = 13;
-   int NumberOfColumnSquares = 9;
+   int NumberOfRowSquares = 13; //13
+   int NumberOfColumnSquares = 9; //9
+   //int offsetX = 0;
+   //int offsetY = 0;
   
   //0=nothing 1=avatar 2=barrier
    int[][] values = new int[NumberOfColumnSquares][NumberOfRowSquares];
@@ -37,11 +33,18 @@ public class Game extends PApplet
    
    public void settings()
     {
-        size(NumberOfColumnSquares*SquareLength, NumberOfRowSquares*SquareLength);
+        //size(NumberOfColumnSquares*SquareLength, NumberOfRowSquares*SquareLength);
+        
+        
+        fullScreen();
+        
+        
     }
 
     public void setup()
     {
+    
+    //add offset x and y variables here to center the grid in full screen mode
      
      //building 2D array
      for(int i = 0; i<NumberOfRowSquares; i++)
@@ -80,9 +83,16 @@ public class Game extends PApplet
                 fill(0, 0, 255);
               }
               rect(n * SquareLength, i * SquareLength, SquareLength, SquareLength);
+              
+             // if (values[i][n] == 1)
+             // {
+              //  println("press");
+            //  }
             }
+            
+        
          
-        }
+        
        
        
        // drawing the grid
@@ -105,74 +115,28 @@ public class Game extends PApplet
        // }
       // }
     }
+}
     
 
     public void mouseClicked()
     {
-        int column = 0;
-        int row = 0;
         
-        // if the mouse is cicked, mouseX determines what 50pixels on the X axis that was clicked.
-        for(int i = 0; i<NumberOfColumnSquares; i++)
-        {
-            if(mouseX> i*SquareLength && mouseX<= (i+1)*SquareLength)
-            {
-              column = i;
-            }
-        }
+        boolean ClickedValidSquare = true;
+        ClickedValidSquare = addBlueSquare(mouseY, mouseX);
         
-        //// if the mouse is cicked, mouseY determines what 50pixels on the y axis that was clicked
-        for(int j = 0; j<NumberOfRowSquares; j++)
+        if(ClickedValidSquare)
         {
-            if(mouseY> j*SquareLength && mouseY<= (j+1)*SquareLength)
-            {
-              row = j;
-            }
-        }
-        // 0 turns to 2
-        values[column][row] = 2;
         
         //old location of player turns to 0
-        values[pig.getxlocation()][pig.getylocation()] = 0;
-       
-       //SET LOCATION OF PLAYER TURNS TO 0
-       if(values[4][6] == 1)
-        {
-            values[4][6]= 0;
-        }
-       //update the pigs velocity and its location
-        pig.updateVelocity();
-        
-        int proposedxlocation = 0;
-        int proposedylocation = 0;
-        
-        proposedxlocation = pig.getxvelocity() + pig.getxlocation();
-        proposedylocation = pig.getyvelocity() + pig.getylocation();
-        
-        if(values[proposedxlocation][proposedylocation] == 2)
-        {
-            pig.updateVelocity();
-        }
-        
-        pig.updateLocation();
-        
-        //when the player moves, 0 turns to 1
-        
-        if(pig.getxlocation() >= 0 && pig.getxlocation() <= NumberOfRowSquares-1 && pig.getylocation()>=0 && pig.getylocation()<=NumberOfColumnSquares - 1)
-        {
-            values[pig.getxlocation()][pig.getylocation()] = 1;
-        }
-        
-        
-        
-        
-        
-        //victory condition
+        values[pig.getylocation()][pig.getxlocation()] = 0;
        
        
-       if(pig.getxlocation() == 0 || pig.getxlocation() == NumberOfRowSquares-1)
-        {
-           for(int i = 0; i<NumberOfRowSquares; i++)
+       
+      if(pig.getxlocation() == 0 || pig.getxlocation() == NumberOfRowSquares-1 || pig.getylocation() == 0 || pig.getylocation() == NumberOfColumnSquares - 1)
+      {
+         //if pig wins
+         
+         for(int i = 0; i<NumberOfRowSquares; i++)
            {
             for(int n = 0; n<NumberOfColumnSquares; n++)
             {
@@ -180,45 +144,127 @@ public class Game extends PApplet
                values[n][i] = 1;
             }
           }
-            
-        }
-        if(pig.getylocation() == 0 || pig.getylocation() == NumberOfColumnSquares-1)
-        {
-         for(int i = 0; i<NumberOfRowSquares; i++)
-           {
-            for(int n = 0; n<NumberOfColumnSquares; n++)
-            {
-                values[n][i] = 1;
-            }
-          }
-        }
-        
-         
-        //victory condition for if player is surrounded by blue
-        
-        if(values[pig.getxlocation() +1][pig.getylocation()] == 2 && values[pig.getxlocation() - 1][pig.getylocation()] == 2 && values[pig.getxlocation()][pig.getylocation() + 1] == 2 && values[pig.getxlocation()][pig.getylocation() - 1] == 2)
-        {
-            for(int i = 0; i< NumberOfRowSquares; i++)
+      }
+      
+      else if(values[pig.getylocation() +1][pig.getxlocation()] == 2 && values[pig.getylocation() - 1][pig.getxlocation()] == 2 && values[pig.getylocation()][pig.getxlocation() + 1] == 2 && values[pig.getylocation()][pig.getxlocation() - 1] == 2)
+      
+      {
+        //if player wins
+        for(int i = 0; i< NumberOfRowSquares; i++)
             {
                 for(int n = 0; n< NumberOfColumnSquares; n++)
                 {
                     values[n][i] = 2;
                 }
             }
-        }
-       /* 
-        if(pig.getxlocation() + 1 = 2 && pig.getxlocation() - 1 = 2 && pig.getylocation() + 1 = 2 && pig.getylocation() - 1 = 2)
-    {
+      }
+      
+      else
+      {
+            //update the pigs velocity and its location
+        pig.updateVelocity();
         
+        int proposedxlocation = 0;
+        int proposedylocation = 0;
+        
+        proposedxlocation = pig.getxvelocity() + pig.getxlocation();
+        proposedylocation = pig.getyvelocity() + pig.getylocation();
+       
+       
+       
+       // seeing if where the player is moving is a blue square
+       
+       while(values[proposedylocation][proposedxlocation] == 2)
+        {
+            pig.updateVelocity();
+            proposedxlocation = pig.getxvelocity() + pig.getxlocation();
+            proposedylocation = pig.getyvelocity() + pig.getylocation();
+       
+        }
+        
+        
+        
+        pig.updateLocation();
+        
+         //when the player moves, 0 turns to 1
+        
+        if(pig.getxlocation() >= 0 && pig.getxlocation() <= NumberOfRowSquares-1 && pig.getylocation()>=0 && pig.getylocation()<=NumberOfColumnSquares - 1)
+        {
+            values[pig.getylocation()][pig.getxlocation()] = 1;
+        }
+      }
+       
     }
-    //making pig not be able to jump over blue
-    if(pig.getxlocation() + 1 = 2 || pig.getxlocation() - 1 = 2 || pig.getylocation() + 1 = 2 || pig.getylocation() - 1 = 2)
-    {
-    
     }
-         */
 
+        
+        
+    // finds where is available to add a blue square
+    public boolean addBlueSquare(int mouseY, int mouseX)
+    {
+        boolean ClickedEquals0 = true;
+        int column = 0;
+         int row = 0;
+        
+            // if the mouse is cicked, mouseX determines what 50pixels on the X axis that was clicked.
+            for(int i = 0; i<NumberOfColumnSquares; i++)
+            {
+                if(mouseX> i*SquareLength && mouseX<= (i+1)*SquareLength)
+                {
+                    column = i;
+                }
+            }
+        
+            //// if the mouse is cicked, mouseY determines what 50pixels on the y axis that was clicked
+            for(int j = 0; j<NumberOfRowSquares; j++)
+            {
+                if(mouseY> j*SquareLength && mouseY<= (j+1)*SquareLength)
+                {
+                  row = j;
+                }
+            }
+            
+            if(values[column][row] == 0)
+            {
+            
+            ClickedEquals0 = true;
+            // if the mouse clicks on a square in the grid that = 0, then it is allowed change and = 2. else, nothing happens
+            values[column][row] = 2;
+            }
+            else
+            {
+                ClickedEquals0 = false;
+            }
+            
+            return ClickedEquals0;
+            
+            }
+            
+ public void keyPressed()
+ {
+ boolean AllSquaresAre2or1 = true;
+     
+     for(int i = 0; i< NumberOfRowSquares; i++)
+        {
+         for(int n = 0; n< NumberOfColumnSquares; n++)
+            {
+            if(values[n][i] != 2 && values[n][i] != 1)
+            {
+                AllSquaresAre2or1 = false;
+            }
+            }   
+        }
+        
+        if(key == 'g' && AllSquaresAre2or1)
+                {
+                setup();
+
+                values[pig.getylocation()][pig.getxlocation()] = 0;
+                pig.MoveToCenter();
+                values[pig.getylocation()][pig.getxlocation()] = 1;
+                }
     }
+    
     
     
    

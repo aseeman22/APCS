@@ -1,8 +1,8 @@
 public class Player{
     private int xlocation = 6;
     private int ylocation = 4;
-    private int xvelocity =1;
-    private int yvelocity = 1;
+    private int xvelocity =0;
+    private int yvelocity = 0;
     public Player()
     {
     
@@ -37,9 +37,11 @@ public class Player{
     
     public void updateVelocity()
     {
-        
-        // see location (assume player is at (i,j)) --> then check if there is a 2 (i+1, j), (i-1, j), (i, j+1), (i, j-1)
-        
+        xvelocity = 0;
+        yvelocity= 0;
+   
+    while(xvelocity == 0 && yvelocity == 0)
+      {
         if(Math.random()< 0.33)
         {
             xvelocity = -1;
@@ -65,11 +67,30 @@ public class Player{
         {
             yvelocity = 0;
         }
+      }
         
-               
+        
+        if(xvelocity == 1 || xvelocity == -1)
+        {
+            yvelocity = 0;
+        }
+        
+        if(yvelocity == 1 || yvelocity == -1)
+        {
+            xvelocity = 0;
+        }
         
         
        
         
     }
+    
+         
+    public void MoveToCenter()
+    {
+        xlocation = 6;
+        ylocation = 4;
+    }
+        
+               
 }
