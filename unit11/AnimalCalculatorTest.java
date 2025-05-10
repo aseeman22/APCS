@@ -15,11 +15,14 @@ public class AnimalCalculatorTest
             animals.add(AnniesHuman3);
             animals.add(AnniesCat3);
             animals.add(AnniesSponge3);
-            animals.add(AnniesSponge3);
+            animals.add(AnniesCentipede3);
       
-      for()
-        
-        //System.out.println(AnimalCalculator.FurryOrNotFurry()); 
+       
+           System.out.println("expected:\nHuman\n2\nnot Furry\n\nCat\n4\nFurry\n\nSponge\n0\nnot Furry\n\nCentipede\n100\nFurry\n ");
+
+      System.out.println("result: ");
+      AnimalCalculator.FurryOrNotFurry(animals);
+      
       
       //System.out.println("Human: " + AnniesHuman3.FurryOrNotFurry() + "Cat: " + AnniesCat3.FurryOrNotFurry() + "Sponge: " + AnniesSponge3.FurryOrNotFurry() + "Centipede: " + AnniesCentipede3.FurryOrNotFurry());
             

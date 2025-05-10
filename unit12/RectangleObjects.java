@@ -17,15 +17,22 @@ public class RectangleObjects
 
     public Rectangle ObjectWithGreatestArea(Rectangle[][] rectangles)
     {
-        Rectangle GreatestArea = 0;
+        double GreatestArea = 0;
+        
         
         for(int i = 0; i<rectangles.length(); i++)
         {
             for(int n = 0; n<rectangles.length(); n++)
             {
-                if(rectangles[i][n])
+                if(rectangles[i][n].area() > GreatestArea)
+                {
+                    GreatestArea = rectangles[i][n].area();
+                }
                     
                     //ask --> how do I access the area?
             }
+            
         }
+        
+        return GreatestArea;
     }

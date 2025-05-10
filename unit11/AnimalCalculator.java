@@ -2,10 +2,13 @@ import java.util.*;
 
 public class AnimalCalculator
 {
-   public void FurryOrNotFurry(ArrayList<Animal> animals)
+   public static void FurryOrNotFurry(ArrayList<Animal> animals)
    {
+       
        for(Animal animal:animals)
        {
+           
+             System.out.println(animal.getName());
            if(animal.getFurriness() == true)
            {
                System.out.println("furry");
@@ -15,9 +18,11 @@ public class AnimalCalculator
                System.out.println("not Furry");
            }
           
-           
-           System.out.println(animal.getName());
            System.out.println(animal.getLegCount());
+            System.out.println(" ");
+           
+           
+          
     
        }
    }
