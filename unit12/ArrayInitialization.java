@@ -1,6 +1,6 @@
 public class ArrayInitialization
 {
- public void ArrayInitialization(){
+ public static void tenbyten(){
     int[][] values = new int[10][10];
    for(int i = 0; i<10; i++){
        for(int j = 0; j<10; j++){
@@ -13,18 +13,30 @@ public class ArrayInitialization
         {
             values[i][j] = 0;
         }
+          System.out.print(values[i][j] + " ");
+           if(j == 9)
+          {
+              System.out.print(" \n");
+          }
       }
     }
    }
     
     
     
-    public void ArrayOfStrings()
+    public static void ArrayOfStrings()
     {
+              
         String[][] words = new String[10][10];
           for(int i = 0; i<10; i++){
               for(int j = 0; j<10; j++){
-                  words[i][j] = " ";
+                  words[i][j] = "";
+                  
+                  System.out.print(" " + "\"" + words[i][j] + "\"" );
+                  if(j == 9)
+                  {
+                      System.out.print(" \n");
+                  }
               }
           }
    
@@ -33,7 +45,7 @@ public class ArrayInitialization
     
     
     
-    public void ArrayOfDoubles()
+    public static void ArrayOfDoubles()
     {
         double[][] numbers = new double[5][5];
             for(int i = 0; i<5; i++)
