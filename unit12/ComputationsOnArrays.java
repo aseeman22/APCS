@@ -1,4 +1,4 @@
-@@ -1,49 +1 @@
+
 public class ComputationsOnArrays{
 
     public int SmallestInteger(int[][] numbers)
