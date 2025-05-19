@@ -6,19 +6,7 @@ public class ArrayInitializationTest
       System.out.println("result: ");
       
       ArrayInitialization.tenbyten();
-                    String expected = """
-                        Expected: 
-                        1 0 0 0 0 0 0 0 0 0 
-                        0 1 0 0 0 0 0 0 0 0 
-                        0 0 1 0 0 0 0 0 0 0 
-                        0 0 0 1 0 0 0 0 0 0 
-                        0 0 0 0 1 0 0 0 0 0 
-                        0 0 0 0 0 1 0 0 0 0 
-                        0 0 0 0 0 0 1 0 0 0 
-                        0 0 0 0 0 0 0 1 0 0 
-                        0 0 0 0 0 0 0 0 1 0 
-                        0 0 0 0 0 0 0 0 0 1
-                        """;
+                    String expected = "Expected: 1 0 0 0 0 0 0 0 0 0\n0 1 0 0 0 0 0 0 0 0\n0 0 1 0 0 0 0 0 0 0\n0 0 0 1 0 0 0 0 0 0\n0 0 0 0 1 0 0 0 0 0\n0 0 0 0 0 1 0 0 0 0\n0 0 0 0 0 0 1 0 0 0\n0 0 0 0 0 0 0 1 0 0\n0 0 0 0 0 0 0 0 1 0\n  0 0 0 0 0 0 0 0 0 1;
       System.out.print(expected);
       
       //Initialize a 2D Array Of Strings
