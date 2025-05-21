@@ -36,4 +36,10 @@ public class Rectangle
         double perimeter = (2 * height) + (2 * width);
         return perimeter;
     }
+    
+     public static void main(String[] args)
+  {
+    
+  }
+    
 }
