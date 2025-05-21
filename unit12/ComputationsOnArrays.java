@@ -1,14 +1,14 @@
 
 public class ComputationsOnArrays{
 
-    public int SmallestInteger(int[][] numbers)
+    public static int SmallestInteger(int[][] numbers)
     {
-        int SmallestNumber = 0;
+        int SmallestNumber = 100;
         for(int i = 0; i<numbers.length; i++)
         {
-            for(int j = 0; j<numbers.length; i++)
+            for(int j = 0; j<numbers[0].length; j++)
             {
-                if(numbers[i][j] > SmallestNumber)
+                if(numbers[i][j] < SmallestNumber)
                 {
                     SmallestNumber = numbers[i][j];
                 }
@@ -18,12 +18,12 @@ public class ComputationsOnArrays{
     }
     
     
-    public float SumOfArray(float[][] numbers)
+    public static float SumOfArray(float[][] numbers)
     {
         float sum = 0;
         for(int i = 0; i<numbers.length; i++)
         {
-            for(int j = 0; j<numbers.length; i++)
+            for(int j = 0; j<numbers[0].length; j++)
             {
                 sum+= numbers[i][j];
             }
@@ -31,16 +31,19 @@ public class ComputationsOnArrays{
         return sum;
     }
     
-    public int NumberOfStringsWithA(String[][] words)
+    public static int NumberOfStringsWithA(String[][] words)
     {
         int NumberOfA = 0;
           for(int i = 0; i<words.length; i++)
         {
-            for(int j = 0; j<words.length; i++)
+            for(int j = 0; j<words[0].length; j++)
             {
-                if(words[i][j].substring(i,j).equals("a"))
+                for(int k = 0; k<words[i][j].length(); k++)
                 {
-                    NumberOfA+=1;
+                    if(words[i][j].substring(k,k+1).equals("a"))
+                    {
+                        NumberOfA+=1;
+                    }
                 }
             }
         }

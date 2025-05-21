@@ -40,4 +40,6 @@ public class Academic
         
         return favoriteNumberN;
     }
+    
+    public ArrayList<Student> favoriteNumberOdd(Student person)
 }
