@@ -3,7 +3,7 @@ public class Shape
     private String name;
     private int numberOfSides;
     
-    public Shape{String name, int numberOfSides}
+    public Shape(String name, int numberOfSides)
     {
         name = name;
         numberOfSides = numberOfSides;

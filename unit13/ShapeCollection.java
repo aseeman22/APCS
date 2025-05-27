@@ -1,7 +1,18 @@
+import java.util.*;
+
 public class ShapeCollection
 {
     ArrayList<Shape> shapes = new ArrayList<Shape>();
     
+    
+    public void getShapes()
+    {
+        for(Shape shape: shapes)
+        {
+            System.out.print(shape.getName());
+            System.out.print(shape.getNumberOfSides());
+        }
+    }
     public void addShape(Shape object)
     {
         shapes.add(object);
@@ -38,7 +49,7 @@ public class ShapeCollection
         ArrayList<Shape> evenSides = new ArrayList<Shape>();
         for(Shape shape: shapes)
         {
-            if(shape.getNumberOfSides % 2 == 0)
+            if(shape.getNumberOfSides() % 2 == 0)
             {
                 evenSides.add(shape);
             }

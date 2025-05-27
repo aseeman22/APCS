@@ -10,6 +10,16 @@ public class Academic
         this.teacher = teacher;
         this.students = students;
     }
+    
+    public void getStudents()
+    {
+        for(Student student: students)
+        {
+           System.out.print(student.getName());
+            System.out.print("\n");
+            System.out.print(student.getFavoriteNumber());
+        }
+    }
      
     public void addNewStudent(Student person)
     {
@@ -20,9 +30,10 @@ public class Academic
     {
         for(Student student: students)
         {
-            System.out.println(student.getName());
+            System.out.print(student.getName());
         }
-        System.out.println(teacher.getName());
+        System.out.print("\n");
+        System.out.print(teacher.getName());
     }
     
     public ArrayList<Student> favoriteNumber(int n)
@@ -41,5 +52,17 @@ public class Academic
         return favoriteNumberN;
     }
     
-    public ArrayList<Student> favoriteNumberOdd(Student person)
+    public ArrayList<Student> FavoriteNumberOdd()
+    {
+        ArrayList<Student> favoriteNumberOdd = new ArrayList<Student>();
+        for(Student person: students)
+        {
+            if(person.getFavoriteNumber()%2 == 1)
+            {
+                favoriteNumberOdd.add(person);
+            }
+        }
+        
+        return favoriteNumberOdd;
+    }
 }
