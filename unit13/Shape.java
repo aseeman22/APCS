@@ -5,8 +5,8 @@ public class Shape
     
     public Shape(String name, int numberOfSides)
     {
-        name = name;
-        numberOfSides = numberOfSides;
+        this.name = name;
+        this.numberOfSides = numberOfSides;
     }
     
     public String getName()
