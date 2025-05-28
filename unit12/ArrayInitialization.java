@@ -52,13 +52,17 @@ public class ArrayInitialization
             {
                 for(int j = 0; j<5; j++)
                 {
-                   numbers[i][j] = 1.0 * 10.0;
+                  numbers[i][j] = (i+1) * 10.0 + (j + 1);
+                  System.out.print(numbers[i][j] + " ");
                 }
+                System.out.print("\n"); 
+                
             }
+        
     }
     
     
-    public void ArrayOfIntegers()
+    public static void ArrayOfIntegers()
     {
         int[][] numbers = new int[6][5];
              for(int i = 0; i<5; i++)
@@ -66,8 +70,10 @@ public class ArrayInitialization
                 for(int j = 0; j<5; j++)
                 {
                    numbers[i][j]= i + 1;
+                    System.out.print(numbers[i][j] + " ");
                     
                 }
+                 System.out.print("\n");
              }
             
     }
